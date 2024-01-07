@@ -16,7 +16,7 @@ Program_ID |   |   |   |   |   | Programsから |  
 -- | -- | -- | -- | -- | -- | -- | --
 Program_ID | int |   | primary |   | YES |   |  
 Program_Title | varchar(50) |   | INDEX |   |   |   |  
-Program_Desc | varchar(200) |   |   |   |   |   |  
+Program_Desc | text |   |   |   |   |   |  
 
 # Program_Genre
 カラム名 | データ型 | NULL | キー | 初期値 | AUTO INCREMENT | 外部キー制約 | ユニークキー制約
@@ -28,7 +28,7 @@ Genre_ID | int |   | primary |   |   | Genresから |  
 カラム名 | データ型 | NULL | キー | 初期値 | AUTO INCREMENT | 外部キー制約 | ユニークキー制約
 -- | -- | -- | -- | -- | -- | -- | --
 Genre_ID | int |   | primary |   | YES |   |  
-Genre_Name | varchar(20) |   | INDEX |   |   |   | YES
+Genre_Name | varchar(20) |   |   |   |   |   | YES
 
 # Seasons
 カラム名 | データ型 | NULL | キー | 初期値 | AUTO INCREMENT | 外部キー制約 | ユニークキー制約
@@ -44,14 +44,14 @@ Episode_ID | int |   | primary |   | YES |   |  
 Season_ID | int |   |   |   |   | Seasonsから |  
 Episode_Num | int | YES |   |   |   |   |  
 Episode_Title | varchar(50) |   | INDEX |   |   |   |  
-Episode_Desc | varchar(200) |   |   |   |   |   |  
+Episode_Desc | text |   |   |   |   |   |  
 Duration | time |   |   |   |   |   |  
 Release_Date | date |   | INDEX |   |   |   |  
 
-# Episode_views
+# Episode_Views
 カラム名 | データ型 | NULL | キー | 初期値 | AUTO INCREMENT | 外部キー制約 | ユニークキー制約
 -- | -- | -- | -- | -- | -- | -- | --
-Views | int |   |   | 0 |   |   |  
+Views | int | YES |   | 0 |   |   |  
 Channel_ID | int |   | primary |   |   | Channelsから |  
 Episode_ID | int |   | primary |   |   | Episodesから |  
-Timetable datetime | datetime |   |   |   |   | Channel_Timetableから |  
+Timetable | datetime |   | primary |   |   | Channel_Timetableから |  
